@@ -1,11 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ============================================
+  //        LOAD SELECTED EVENT FROM STORAGE
+  // ============================================
+  const selectedEvent = JSON.parse(localStorage.getItem("selectedEvent"));
+
+  if (!selectedEvent) {
+    console.log("No event selected!");
+  } else {
+    const { img, title, dateText } = selectedEvent;
+
+    // Update event card image
+    const imgEl = document.querySelector(".event-cards img");
+    if (imgEl) imgEl.src = img;
+
+    // Update date (use dateText)
+    // Update date (cut before <br>)
+    const dateEl = document.querySelector(".event-details h6");
+    if (dateEl) {
+      const cleanDate = dateText.split("<br>")[0];
+      dateEl.textContent = cleanDate.trim();
+    }
+
+    // Update title
+    const titleEl = document.querySelector(".event-details h5");
+    if (titleEl) titleEl.textContent = title;
+  }
+
+  // ============================================
+  //              FORM VALIDATION + SAVE
+  // ============================================
   const form = document.querySelector("form");
 
   const fullName = document.getElementById("fullName");
   const email = document.getElementById("email");
   const contact = document.getElementById("contact");
 
-  // Success message element (we will insert it once)
   let successMsg = null;
 
   form.addEventListener("submit", (e) => {
@@ -22,15 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
       inp.classList.remove("is-invalid");
     });
 
-    // Remove previous success message
     if (successMsg) successMsg.textContent = "";
 
-    // --- Validation ---
+    // --- Full name validation ---
     if (fullName.value.trim() === "") {
       setError(fullName, "Full name is required");
       valid = false;
     }
 
+    // --- Email validation ---
     if (email.value.trim() === "") {
       setError(email, "Email is required");
       valid = false;
@@ -39,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       valid = false;
     }
 
+    // --- Contact validation ---
     if (contact.value.trim() === "") {
       setError(contact, "Contact number is required");
       valid = false;
@@ -49,16 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!valid) return;
 
-    // ============================
-    //   SAVE REGISTRATION LOCALLY
-    // ============================
-
+    // ============================================
+    //     SAVE REGISTRATION WITH dateText
+    // ============================================
     const registration = {
       fullName: fullName.value.trim(),
       email: email.value.trim(),
       contact: contact.value.trim(),
-      eventId: 7, // later dynamic
-      date: new Date().toISOString(),
+      eventTitle: selectedEvent ? selectedEvent.title : "Unknown Event",
+      eventDateText: selectedEvent ? selectedEvent.dateText : "",
+      eventImg: selectedEvent ? selectedEvent.img : "",
+      dateRegistered: new Date().toISOString(),
     };
 
     const existing =
@@ -68,17 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("eventRegistrations", JSON.stringify(existing));
 
-    // ============================
-    //   CLEAR INPUT FIELDS
-    // ============================
+    // Clear inputs
     fullName.value = "";
     email.value = "";
     contact.value = "";
 
-    // ============================
-    //   SHOW SUCCESS MESSAGE
-    // ============================
-
+    // Success message
     if (!successMsg) {
       successMsg = document.createElement("p");
       successMsg.style.color = "#2ecc71";

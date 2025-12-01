@@ -76,4 +76,15 @@ document.addEventListener("DOMContentLoaded", () => {
       Happening on <b>${cleanDate}</b>. We’re thrilled to have you join us!
     `;
   }
+
+  // ==============================
+  //  GET TICKETS → redirect
+  // ==============================
+  const getTicketBtn = document.querySelector(".get-tickect");
+
+  if (getTicketBtn) {
+    getTicketBtn.addEventListener("click", () => {
+      window.location.href = "registerEvent.html";
+    });
+  }
 });
