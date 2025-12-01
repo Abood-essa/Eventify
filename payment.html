@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventify - Pay Now</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Guest Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="guestHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item focus">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button
+              class="btn btn-login"
+              onclick="window.location.href='logIn.html'"
+            >
+              LOGIN
+            </button>
+            <button
+              class="btn btn-signup"
+              onclick="window.location.href='signUp.html'"
+            >
+              SIGNUP
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Logged-in Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="userHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item focus">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="profile-info d-flex align-items-center gap-3">
+            <img
+              src="images/maleimage.png"
+              alt="User Avatar"
+              class="rounded-circle"
+              width="35"
+              height="35"
+            />
+            <span class="fw-semibold user-name-span">Hi, Abood</span>
+            <button class="btn-logout">
+              <i class="fa-solid fa-right-from-bracket"></i> LOGOUT
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Start hero -->
+    <div class="hero-section text-center p-4">
+      <div class="container">
+        <h1>We are <span class="highlight">Eventify</span></h1>
+        <p>
+          We bring<br />
+          <strong>dream Events</strong><br />
+          to life!
+        </p>
+      </div>
+    </div>
+    <!-- pay now section -->
+    <div class="pay-now py-5 text-center">
+      <div class="container">
+        <h3 class="fw-bold mb-4" style="font-family: 'Bagel Fat One', cursive">
+          Pay now !
+        </h3>
+
+        <div class="payment-form mx-auto text-start" style="max-width: 600px">
+          <h5 class="fw-semibold mb-3">Credit Card Details</h5>
+
+          <!-- Payment Methods -->
+          <div class="border rounded p-3 mb-4">
+            <label class="fw-semibold mb-2 d-block"
+              >Choose Payment Method</label
+            >
+            <div class="d-flex flex-wrap align-items-center gap-3">
+              <img src="images/masterCard.png" alt="MasterCard" width="55" />
+              <img src="images/Visa.png" alt="Visa" width="55" />
+              <img src="images/AmEx.png" alt="AmEx" width="55" />
+              <img src="images/cliq.png" alt="Cliq" width="55" />
+            </div>
+          </div>
+
+          <!-- Form -->
+          <form>
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Name on card</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Meet Patel"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-semibold">Card number</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="0000 0000 0000 0000"
+                required
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Card expiration</label>
+                <div class="d-flex gap-2">
+                  <select class="form-select" required>
+                    <option>Month</option>
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                  <select class="form-select" required>
+                    <option>Year</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">Card Security Code</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Code"
+                    required
+                  />
+                  <span class="input-group-text bg-white"
+                    ><i class="fa-solid fa-circle-question"></i
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="pay-btn w-100 py-3 mt-2 fw-bold"
+              style="letter-spacing: 2px"
+            >
+              PAY
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title text-danger">Social Media</h6>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Events</h6>
+            <ul class="footer-links">
+              <li><a href="#">Abu Dhabi</a></li>
+              <li><a href="#">Al Ain</a></li>
+              <li><a href="#">Ajman</a></li>
+              <li><a href="#">Dubai</a></li>
+              <li><a href="#">Fujairah</a></li>
+              <li><a href="#">Ras Al Khaimah</a></li>
+            </ul>
+          </div>
+
+          <!-- Suppliers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Suppliers</h6>
+            <ul class="footer-links">
+              <li><a href="#">Photographers</a></li>
+              <li><a href="#">Decorators</a></li>
+              <li><a href="#">Venues Planner</a></li>
+              <li><a href="#">Choreographers</a></li>
+              <li><a href="#">Designers</a></li>
+              <li><a href="#">Makeup Artists</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6">
+            <h6 class="footer-title">Newsletter</h6>
+            <p>Subscribe To Get Latest Media Updates</p>
+            <button class="live-chat-btn">Live Chat</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/authHeader.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

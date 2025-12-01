@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventify - About</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Guest Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="guestHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item focus">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button
+              class="btn btn-login"
+              onclick="window.location.href='logIn.html'"
+            >
+              LOGIN
+            </button>
+            <button
+              class="btn btn-signup"
+              onclick="window.location.href='signUp.html'"
+            >
+              SIGNUP
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Logged-in Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="userHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item focus">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="profile-info d-flex align-items-center gap-3">
+            <img
+              src="images/maleimage.png"
+              alt="User Avatar"
+              class="rounded-circle"
+              width="35"
+              height="35"
+            />
+            <span class="fw-semibold user-name-span">Hi, Abood</span>
+            <button class="btn-logout">
+              <i class="fa-solid fa-right-from-bracket"></i> LOGOUT
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Start hero -->
+    <div class="hero-section text-center p-4">
+      <div class="container">
+        <h1>We are <span class="highlight">Eventify</span></h1>
+        <p>
+          We bring<br />
+          <strong>dream Events</strong><br />
+          to life!
+        </p>
+      </div>
+    </div>
+
+    <!-- About us section -->
+    <div class="content-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="section-title">About Us</h2>
+            <p class="about-text">
+              Eventify is a user-friendly platform that connects event
+              organizers and attendees in one centralized space. Developed by
+              students at The Hashemite University, it was created to solve the
+              problem of poor event turnout due to scattered communication in
+              places like Jordan.
+            </p>
+            <p class="about-text">
+              With tools for event creation, ticketing, and community
+              engagement, Eventify makes organizing and discovering events
+              simple and secure. Built on a scalable .NET backend with a
+              responsive design, it's a smart solution for building stronger,
+              more connected communities.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="images/AboutUs.png"
+              alt="About Eventify"
+              class="about-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- what we offer section -->
+    <div class="content-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <img
+              src="images/whatWeOffer.png"
+              alt="About Eventify"
+              class="offer-image"
+            />
+          </div>
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="section-title">What We Offer?</h2>
+            <ul class="offer-list">
+              <li>
+                <strong>Event Creation Tools –</strong> Easily create, manage,
+                and publish events with customizable details.
+              </li>
+              <li>
+                <strong>Smart Event Discovery –</strong> Search and filter
+                events by category, location, and preferences.
+              </li>
+              <li>
+                <strong>Secure Ticketing –</strong> Offer free or paid tickets
+                with a smooth, secure checkout process.
+              </li>
+              <li>
+                <strong>Community Engagement –</strong> Build and join event
+                communities with feedback <br />and ratings.
+              </li>
+              <li>
+                <strong>Admin Dashboard –</strong> Manage users, monitor
+                platform activity, and send announcements.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Who we are section -->
+    <div class="content-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="section-title">Who We Are?</h2>
+            <p class="about-text">
+              We are a team of Software Engineering students from The Hashemite
+              University, driven by a shared vision to improve how events are
+              organized and experienced in our communities.
+            </p>
+            <p class="about-text">
+              With tools for event creation, ticketing, and community
+              engagement, Eventify makes organizing and discovering events
+              simple and secure. Built on a scalable .NET backend with a
+              responsive design, it's a smart solution for building stronger,
+              more connected communities.
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="images/whoWeAre.png"
+              alt="About Eventify"
+              class="about-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title text-danger">Social Media</h6>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Events</h6>
+            <ul class="footer-links">
+              <li><a href="#">Abu Dhabi</a></li>
+              <li><a href="#">Al Ain</a></li>
+              <li><a href="#">Ajman</a></li>
+              <li><a href="#">Dubai</a></li>
+              <li><a href="#">Fujairah</a></li>
+              <li><a href="#">Ras Al Khaimah</a></li>
+            </ul>
+          </div>
+
+          <!-- Suppliers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Suppliers</h6>
+            <ul class="footer-links">
+              <li><a href="#">Photographers</a></li>
+              <li><a href="#">Decorators</a></li>
+              <li><a href="#">Venues Planner</a></li>
+              <li><a href="#">Choreographers</a></li>
+              <li><a href="#">Designers</a></li>
+              <li><a href="#">Makeup Artists</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6">
+            <h6 class="footer-title">Newsletter</h6>
+            <p>Subscribe To Get Latest Media Updates</p>
+            <button class="live-chat-btn">Live Chat</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/authHeader.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

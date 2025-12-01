@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventify - Create Event</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body class="create-event-page">
+    <!-- create section -->
+    <a href="events.html" class="back-btn"
+      ><i class="fa-solid fa-arrow-left"></i> Back</a
+    >
+    <div class="create-section">
+      <!-- Left Side with Two Images -->
+      <div class="left-side">
+        <img src="images/Logo.png" alt="Eventify Image 1" />
+        <img src="images/leftCreateEvent.png" alt="Eventify Image 2" />
+      </div>
+
+      <!-- Right Side Form -->
+      <div class="right-side">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nameInput"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Event Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="eventNameInput"
+              placeholder="Enter Event name"
+            />
+          </div>
+
+          <!-- ✅ Category Dropdown -->
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="categoryInput">
+              <option selected>Select Category</option>
+              <option>Technology</option>
+              <option>Music & Entertainment</option>
+              <option>Education</option>
+              <option>Sports</option>
+              <option>Health & Wellness</option>
+              <option>Business</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailInput"
+              placeholder="Enter Email"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Phone number</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="phoneInput"
+              placeholder="Enter Phone number"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Capacity</label>
+            <input
+              type="number"
+              class="form-control"
+              id="capacityInput"
+              placeholder="Enter event Capacity"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">How much will you charge?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="priceInput"
+              placeholder="$$"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Location</label>
+            <select class="form-select" id="locationInput">
+              <option selected>Select Location</option>
+              <option>Amman</option>
+              <option>Irbid</option>
+              <option>Zarqa</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Select Date and time</label>
+            <input type="datetime-local" class="form-control" id="dateInput" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Event description</label>
+            <textarea
+              class="form-control"
+              id="descriptionInput"
+              rows="3"
+              placeholder="..."
+            ></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Upload Media</label>
+            <div class="upload-field">
+              <input
+                type="file"
+                class="form-control border-0"
+                id="imageInput"
+              />
+              <i class="fa-solid fa-upload"></i>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/createEvent.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

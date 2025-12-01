@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventify</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Guest Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="guestHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item focus">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button
+              class="btn btn-login"
+              onclick="window.location.href='logIn.html'"
+            >
+              LOGIN
+            </button>
+            <button
+              class="btn btn-signup"
+              onclick="window.location.href='signUp.html'"
+            >
+              SIGNUP
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Logged-in Header -->
+    <nav class="navbar navbar-expand-lg navbar-light" id="userHeader">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item focus">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="profile-info d-flex align-items-center gap-3">
+            <img
+              src="images/maleimage.png"
+              alt="User Avatar"
+              class="rounded-circle"
+              width="35"
+              height="35"
+            />
+            <span class="fw-semibold user-name-span">Hi, Abood</span>
+            <button class="btn-logout">
+              <i class="fa-solid fa-right-from-bracket"></i> LOGOUT
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Landing -->
+    <div class="landing">
+      <div class="container">
+        <h1>Browse events</h1>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="search-box">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <select class="form-select" id="searchCategory">
+                    <option>Select Category</option>
+                    <option>Sports</option>
+                    <option>Technology</option>
+                    <option>Food & Drink</option>
+                    <option>Business</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <select class="form-select" id="searchLocation">
+                    <option>Select Location</option>
+                    <option>Irbid</option>
+                    <option>Amman</option>
+                    <option>Zarqa</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <button class="btn-search w-100" id="searchBtn">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- category section -->
+    <div class="container category">
+      <div class="section-heading">
+        <h2>Browse By Category</h2>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="category-card">
+            <img src="/images/Sports.png" alt="Sports" />
+            <div class="category-overlay">
+              <h5>Sports</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="category-card">
+            <img src="/images/Technology.png" alt="Technology" />
+            <div class="category-overlay">
+              <h5>Technology</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="category-card">
+            <img src="/images/Food&Drinks.png" alt="Food & Drink" />
+            <div class="category-overlay">
+              <h5>Food & Drink</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="category-card">
+            <img src="images/Business.png" alt="Business" />
+            <div class="category-overlay">
+              <h5>Business</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination-container">
+        <ul class="pagination">
+          <li>
+            <a href="#" class="arrow prev"
+              ><i class="fa-solid fa-angles-left"></i
+            ></a>
+          </li>
+          <li><a href="#" class="active">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li>
+            <a href="#" class="arrow next"
+              ><i class="fa-solid fa-angles-right"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- popular events section -->
+    <div class="container events">
+      <div class="section-heading">
+        <h2>Popular Events</h2>
+        <a href="#" class="view-all">View All</a>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="card event-card">
+            <img
+              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400"
+              alt="Event"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Neurodivergent Early Years - Web Streaming Live
+              </h5>
+              <p class="card-text">
+                Fri, May 9 • 10:30 PM GMT+3<br />ACT - Autism Community Training
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card event-card">
+            <img
+              src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400"
+              alt="Event"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                4 Day PMP Live Instructor Led Certification Training
+              </h5>
+              <p class="card-text">
+                in Jurupa Valley, CA, Tue, May 27 • 5:00 PM • 2 more<br />Learners
+                Ink
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="card event-card">
+            <img
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400"
+              alt="Event"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                The AI clinic: A FREE Q&A For CEOs, managers and entrepreneurs
+              </h5>
+              <p class="card-text">
+                Tuesday, May 27<br />The Tesseract Academy
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pagination-container">
+        <ul class="pagination">
+          <li>
+            <a href="#" class="arrow prev"
+              ><i class="fa-solid fa-angles-left"></i
+            ></a>
+          </li>
+          <li><a href="#" class="active">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li>
+            <a href="#" class="arrow next"
+              ><i class="fa-solid fa-angles-right"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- news section -->
+    <div class="container">
+      <div class="news-container">
+        <div class="news-content">
+          <img src="images/News.png" alt="" />
+
+          <div class="news-body">
+            <h2>Etihad-IT</h2>
+            <p>Etihad-IT has won the most visited event this week, Congrats.</p>
+            <div class="btn">Explore Etihad-IT Events</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- communities section -->
+    <div class="container communities">
+      <div class="section-heading">
+        <h2>Communities</h2>
+        <a href="communites.html" class="view-all">View All </a>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="card community-card">
+            <img
+              src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=400"
+              alt="Community"
+            />
+            <div class="card-body">
+              <h6>HU-IT Community</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card community-card">
+            <img src="/images/HU-community.png" alt="Community" />
+            <div class="card-body">
+              <h6>Med Students community</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card community-card">
+            <img src="/images/Football-community.png" alt="Community" />
+            <div class="card-body">
+              <h6>Amman football community</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="card community-card">
+            <img src="images/Arts-community.png" alt="Community" />
+            <div class="card-body">
+              <h6>Arts community</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- featured-videos -->
+    <div class="container featured-videos">
+      <div class="section-heading">
+        <h2>Featured Videos</h2>
+        <a href="#" class="view-all">View All </a>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="video-card">
+            <div class="video-image">
+              <img
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400"
+                alt="Labours day"
+              />
+              <div class="play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-body">
+              <h5>Labours day</h5>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="video-card">
+            <div class="video-image">
+              <img
+                src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=400"
+                alt="HU-football match"
+              />
+              <div class="play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-body">
+              <h5>HU-basketball match</h5>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="video-card">
+            <div class="video-image">
+              <img
+                src="https://images.unsplash.com/photo-1490100667990-4fced8021649?w=400"
+                alt="Blood-Donation to Gaza"
+              />
+              <div class="play-btn">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="video-body">
+              <h5>Blood-Donation to Gaza</h5>
+              <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pagination-container">
+        <ul class="pagination">
+          <li>
+            <a href="#" class="arrow prev"
+              ><i class="fa-solid fa-angles-left"></i
+            ></a>
+          </li>
+          <li><a href="#" class="active">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li>
+            <a href="#" class="arrow next"
+              ><i class="fa-solid fa-angles-right"></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title text-danger">Social Media</h6>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Events</h6>
+            <ul class="footer-links">
+              <li><a href="#">Abu Dhabi</a></li>
+              <li><a href="#">Al Ain</a></li>
+              <li><a href="#">Ajman</a></li>
+              <li><a href="#">Dubai</a></li>
+              <li><a href="#">Fujairah</a></li>
+              <li><a href="#">Ras Al Khaimah</a></li>
+            </ul>
+          </div>
+
+          <!-- Suppliers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Suppliers</h6>
+            <ul class="footer-links">
+              <li><a href="#">Photographers</a></li>
+              <li><a href="#">Decorators</a></li>
+              <li><a href="#">Venues Planner</a></li>
+              <li><a href="#">Choreographers</a></li>
+              <li><a href="#">Designers</a></li>
+              <li><a href="#">Makeup Artists</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6">
+            <h6 class="footer-title">Newsletter</h6>
+            <p>Subscribe To Get Latest Media Updates</p>
+            <button class="live-chat-btn">Live Chat</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/authHeader.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/events.js"></script>
+    <!-- <script src="js/communitiesData.js"></script> -->
+    <!-- <script src="js/communityProfile.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

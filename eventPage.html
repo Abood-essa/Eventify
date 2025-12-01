@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eventify - Event Page</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="" width="250" height="75"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ceateEvent.html">Create Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactUs.html">Contact Us</a>
+            </li>
+          </ul>
+          <div class="profile-info d-flex align-items-center gap-3">
+            <img
+              src="images/maleimage.png"
+              alt="User Avatar"
+              class="rounded-circle"
+              width="35"
+              height="35"
+            />
+            <span class="fw-semibold user-name-span">Hi, Abood</span>
+            <button class="btn-logout">LOGOUT</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- event section -->
+    <div class="event-page py-5">
+      <div class="container">
+        <div class="event-banner mb-4">
+          <img
+            src="images/registerEvent.png"
+            alt="TEDx Amman"
+            class="img-fluid rounded-5"
+          />
+        </div>
+
+        <div class="row align-items-start">
+          <div class="col-lg-8">
+            <p class="text-muted fw-bold mb-1">Saturday, October 4</p>
+            <h2 class="fw-bold" style="font-family: 'Bagel Fat One', cursive">
+              TEDxAmman Conference
+            </h2>
+
+            <div class="author d-flex align-items-center gap-3 mt-4">
+              <img
+                src="images/maleimage.png"
+                alt="Organizer"
+                class="rounded-circle"
+                width="45"
+                height="45"
+              />
+              <div>
+                <p class="mb-0 fw-bold">By TEDxAmman Conferences</p>
+              </div>
+              <button class="btn btn-danger btn-sm px-4 rounded-pill">
+                Follow
+              </button>
+            </div>
+
+            <div class="event-info mt-5">
+              <p>
+                <strong>Date and time</strong><br />Saturday, October 4 – 11:30
+                PM EEST
+              </p>
+
+              <p>
+                <strong>Location</strong><br />
+                Roman Theatre<br />
+                Taha Al Hashemi Amman, Amman Governorate<br />
+                <a href="#" class="text-danger fw-semibold">Show on map</a>
+              </p>
+
+              <p>
+                <strong>Refund Policy</strong><br />Refunds up to 7 days before
+                event
+              </p>
+
+              <p><strong>About this event</strong></p>
+              <ul>
+                <li>Event lasts 7 hours 30 minutes</li>
+              </ul>
+
+              <p class="mt-3">
+                Welcome to the
+                <a href="#" class="text-danger fw-semibold"
+                  >TEDxAmman Conference!</a
+                >
+                TEDxAmman 2025 is not just a conference—it’s the largest TEDx
+                event in the MENA region, hosted in one of the world’s most
+                breathtaking venues, the UNESCO-recognized Roman Theater in
+                downtown Amman.<br /><br />
+                Join over 4,000 attendees from around the globe for a full-day
+                experience that blends world-class talks, bold ideas, and
+                extraordinary inspiration.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <h4 class="fw-bold">$50.0</h4>
+            <button class="get-tickect mt-2 rounded-4">Get Tickets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title text-danger">Social Media</h6>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-x-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Events -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Events</h6>
+            <ul class="footer-links">
+              <li><a href="#">Abu Dhabi</a></li>
+              <li><a href="#">Al Ain</a></li>
+              <li><a href="#">Ajman</a></li>
+              <li><a href="#">Dubai</a></li>
+              <li><a href="#">Fujairah</a></li>
+              <li><a href="#">Ras Al Khaimah</a></li>
+            </ul>
+          </div>
+
+          <!-- Suppliers -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Suppliers</h6>
+            <ul class="footer-links">
+              <li><a href="#">Photographers</a></li>
+              <li><a href="#">Decorators</a></li>
+              <li><a href="#">Venues Planner</a></li>
+              <li><a href="#">Choreographers</a></li>
+              <li><a href="#">Designers</a></li>
+              <li><a href="#">Makeup Artists</a></li>
+            </ul>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h6 class="footer-title">Quick Links</h6>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-4 col-md-6">
+            <h6 class="footer-title">Newsletter</h6>
+            <p>Subscribe To Get Latest Media Updates</p>
+            <button class="live-chat-btn">Live Chat</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/eventPage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
