@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
       localStorage.removeItem("loggedInUser");
-      window.location.reload();
+      window.location.href = "index.html";
     });
   }
 });
