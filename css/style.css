@@ -1457,3 +1457,8 @@ body {
   height: 300px;
   width: 400px;
 }
+
+.no-events-message {
+  margin: 2rem 0;
+  font-weight: 500;
+}

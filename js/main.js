@@ -540,7 +540,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // ========= Events (now with categories) ========= //
+  // ========= Events (now with categories & location) ========= //
   const events = [
     {
       title: "Tech Innovation Summit 2025",
@@ -549,6 +549,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400",
       pill: "Paid",
       category: "Technology",
+      location: "Amman",
     },
     {
       title: "Food Festival: Taste of Jordan",
@@ -557,6 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1478145046317-39f10e56b5e9?w=400",
       pill: "Free",
       category: "Food & Drink",
+      location: "Amman",
     },
     {
       title: "Startup Growth Conference",
@@ -565,6 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400",
       pill: "Paid",
       category: "Business",
+      location: "Amman",
     },
     {
       title: "Cultural Night Celebration",
@@ -573,6 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=400",
       pill: "Free",
       category: "Art",
+      location: "Amman",
     },
     {
       title: "Women in Tech Meetup",
@@ -581,6 +585,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=400",
       pill: "Free",
       category: "Technology",
+      location: "Amman",
     },
     {
       title: "Sports Gala Championship",
@@ -589,6 +594,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1503424886308-418b744b62a0?w=400",
       pill: "Paid",
       category: "Sports",
+      location: "Amman",
     },
     {
       title: "AI Workshop for Beginners",
@@ -597,6 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1532614338840-ab30cf10ed36?w=400",
       pill: "Free",
       category: "Technology",
+      location: "Amman",
     },
     {
       title: "Design & UX Masterclass",
@@ -605,6 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1518977956815-dee006ba5934?w=400",
       pill: "Paid",
       category: "Education",
+      location: "Amman",
     },
     {
       title: "Music Festival Night",
@@ -613,6 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
       img: "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=400",
       pill: "Paid",
       category: "Music",
+      location: "Amman",
     },
   ];
 
@@ -642,6 +651,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // CASE 1 — No pagination (like events.html)
     if (!pagination) {
+      if (data.length === 0) {
+        // Special nice message for events page when no matches
+        if (section === ".container.events") {
+          row.innerHTML = `
+        <div class="col-12">
+          <div class="alert alert-warning text-center no-events-message">
+            No events match your filters.
+          </div>
+        </div>
+      `;
+        } else {
+          row.innerHTML = "";
+        }
+        return;
+      }
+
       row.innerHTML = data.map(renderFn).join("");
       attachEventCardClicks(row);
       return;
@@ -692,9 +717,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       animateTransition();
       attachEventCardClicks(row);
-
-      // CATEGORY CLICKS
-      attachCategoryClicks(row);
+      attachCategoryClicks(row); // safe on rows that have category cards
 
       pageLinks.forEach((a, idx) => {
         a.classList.toggle("active", idx + 1 === currentPage);
@@ -777,18 +800,18 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>`;
 
   const renderEvent = (ev) => `
-    <div class="col-lg-4 col-md-6">
-      <div class="card event-card">
-        <img src="${ev.img}" alt="${ev.title}" />
-        <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h5 class="card-title mb-0">${ev.title}</h5>
-            <span class="event-pill ${ev.pill.toLowerCase()}">${ev.pill}</span>
-          </div>
-          <p class="card-text">${ev.date}<br>${ev.organizer}</p>
+  <div class="col-lg-4 col-md-6">
+    <div class="card event-card">
+      <img src="${ev.img}" alt="${ev.title}" />
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="card-title mb-0">${ev.title}</h5>
+          <span class="event-pill ${ev.pill.toLowerCase()}">${ev.pill}</span>
         </div>
+        <p class="card-text">${ev.date}<br>${ev.organizer}</p>
       </div>
-    </div>`;
+    </div>
+  </div>`;
 
   const renderVideo = (vid) => `
     <div class="col-lg-4 col-md-6">
@@ -843,7 +866,11 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.cursor = "pointer";
 
       card.addEventListener("click", () => {
+        // clicked category card → store selectedCategory and clear search filters
         localStorage.setItem("selectedCategory", catName);
+        localStorage.removeItem("searchCategory");
+        localStorage.removeItem("searchLocation");
+
         window.location.href = "events.html";
       });
     });
@@ -858,34 +885,76 @@ document.addEventListener("DOMContentLoaded", () => {
     !window.location.pathname.includes("profile.html")
   ) {
     const isEventsPage = window.location.pathname.includes("events.html");
-    const selectedCategory = localStorage.getItem("selectedCategory");
 
-    if (isEventsPage && selectedCategory) {
-      // FILTER only on events.html
-      const filteredEvents = events.filter(
-        (ev) =>
-          ev.category &&
-          ev.category.toLowerCase() === selectedCategory.toLowerCase()
-      );
+    const searchCategory = localStorage.getItem("searchCategory");
+    const searchLocation = localStorage.getItem("searchLocation");
+    const selectedCategoryFromCard = localStorage.getItem("selectedCategory");
 
-      setupPagination(".container.events", filteredEvents, renderEvent, 3);
-    } else {
-      // ALWAYS show all events on index.html
-      setupPagination(".container.events", events, renderEvent, 3);
+    // Prefer searchCategory from search box, fallback to clicked category
+    const effectiveCategory = searchCategory || selectedCategoryFromCard;
+
+    let dataToRender = events;
+
+    if (isEventsPage && (effectiveCategory || searchLocation)) {
+      dataToRender = events.filter((ev) => {
+        // Category filter
+        if (
+          effectiveCategory &&
+          (!ev.category ||
+            ev.category.toLowerCase() !== effectiveCategory.toLowerCase())
+        ) {
+          return false;
+        }
+
+        // Location filter
+        if (
+          searchLocation &&
+          (!ev.location ||
+            ev.location.toLowerCase() !== searchLocation.toLowerCase())
+        ) {
+          return false;
+        }
+
+        return true;
+      });
     }
+
+    // index.html OR events.html with no filters → show all events
+    setupPagination(".container.events", dataToRender, renderEvent, 3);
   }
 
   if (document.querySelector(".container.featured-videos"))
     setupPagination(".container.featured-videos", videos, renderVideo, 3);
 
-  // ========= Auto-select category in dropdown on events.html =========
+  // ========= Auto-fill search inputs on events.html =========
   if (window.location.pathname.includes("events.html")) {
-    const selectedCategory = localStorage.getItem("selectedCategory");
-    const categorySelect = document.getElementById("categoryFilter");
+    const searchCategoryVal = localStorage.getItem("searchCategory");
+    const searchLocationVal = localStorage.getItem("searchLocation");
+    const selectedCategoryFromCard = localStorage.getItem("selectedCategory");
 
-    if (categorySelect && selectedCategory) {
-      categorySelect.value = selectedCategory;
+    const categorySelect = document.getElementById("searchCategory");
+    const locationSelect = document.getElementById("searchLocation");
+
+    function setSelectValue(selectEl, value) {
+      // if element is missing or no value => do nothing
+      if (!selectEl || !value) return;
+      if (!selectEl.options || !selectEl.options.length) return;
+
+      for (let i = 0; i < selectEl.options.length; i++) {
+        const opt = selectEl.options[i];
+        if (opt.value.toLowerCase() === value.toLowerCase()) {
+          selectEl.selectedIndex = i;
+          break;
+        }
+      }
     }
+
+    // prefer searchCategory, fallback to clicked category
+    setSelectValue(
+      categorySelect,
+      searchCategoryVal || selectedCategoryFromCard
+    );
+    setSelectValue(locationSelect, searchLocationVal);
   }
 
   // ========= Profile Navigation ========= //
@@ -904,4 +973,33 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
+  // ========= Search (Home + Events) → save filters and go to events.html ========= //
+  const searchBtn = document.getElementById("searchBtn");
+  const searchCategorySelect = document.getElementById("searchCategory");
+  const searchLocationSelect = document.getElementById("searchLocation");
+
+  if (searchBtn && searchCategorySelect && searchLocationSelect) {
+    searchBtn.addEventListener("click", () => {
+      const categoryVal = searchCategorySelect.value;
+      const locationVal = searchLocationSelect.value;
+
+      // This is a search → clear clicked category
+      localStorage.removeItem("selectedCategory");
+
+      if (categoryVal && categoryVal !== "Select Category") {
+        localStorage.setItem("searchCategory", categoryVal);
+      } else {
+        localStorage.removeItem("searchCategory");
+      }
+
+      if (locationVal && locationVal !== "Select Location") {
+        localStorage.setItem("searchLocation", locationVal);
+      } else {
+        localStorage.removeItem("searchLocation");
+      }
+
+      window.location.href = "events.html";
+    });
+  }
 });
